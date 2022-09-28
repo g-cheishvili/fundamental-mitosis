@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/mitosis/input",
+  "projectType": "library",
+  "targets": {
+    "compile": {
+      "executor": "@fundamental/mitosis-tools:compile",
+      "outputs": ["libs/angular/input", "libs/react/input"],
+      "options": {
+        "components": ["./input-control.component.tsx"],
+        "assets": ["./input.component.css"],
+        "controlValueAccessor": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/mitosis/input/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

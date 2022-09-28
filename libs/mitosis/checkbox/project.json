@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/mitosis/checkbox",
+  "projectType": "library",
+  "targets": {
+    "compile": {
+      "executor": "@fundamental/mitosis-tools:compile",
+      "outputs": ["libs/angular/checkbox", "libs/react/checkbox"],
+      "options": {
+        "components": ["./checkbox-control.component.tsx"],
+        "assets": ["./checkbox.component.css"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/mitosis/checkbox/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/mitosis/textarea",
+  "projectType": "library",
+  "targets": {
+    "compile": {
+      "executor": "@fundamental/mitosis-tools:compile",
+      "outputs": ["libs/angular/textarea", "libs/react/textarea"],
+      "options": {
+        "components": ["./textarea.component.tsx"],
+        "assets": ["./textarea.component.css"],
+        "controlValueAccessor": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/mitosis/textarea/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

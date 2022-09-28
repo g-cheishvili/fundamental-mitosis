@@ -1,0 +1,62 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@fundamental/angular": ["libs/angular/index.ts"],
+      "@fundamental/angular/button": ["libs/angular/button/index.ts"],
+      "@fundamental/angular/card": ["libs/angular/card/index.ts"],
+      "@fundamental/angular/checkbox": ["libs/angular/checkbox/index.ts"],
+      "@fundamental/angular/cva": ["libs/angular/cva/index.ts"],
+      "@fundamental/angular/form-item": ["libs/angular/form-item/index.ts"],
+      "@fundamental/angular/icon": ["libs/angular/icon/index.ts"],
+      "@fundamental/angular/input": ["libs/angular/input/index.ts"],
+      "@fundamental/angular/list": ["libs/angular/list/index.ts"],
+      "@fundamental/angular/segmented-button": [
+        "libs/angular/segmented-button/index.ts"
+      ],
+      "@fundamental/angular/shared": ["libs/angular/shared/index.ts"],
+      "@fundamental/angular/textarea": ["libs/angular/textarea/index.ts"],
+      "@fundamental/mitosis-tools": ["libs/mitosis-tools/src/index.ts"],
+      "@fundamental/mitosis/button": ["libs/mitosis/button/index.ts"],
+      "@fundamental/mitosis/card": ["libs/mitosis/card/src/index.ts"],
+      "@fundamental/mitosis/checkbox": ["libs/mitosis/checkbox/index.ts"],
+      "@fundamental/mitosis/form-item": ["libs/mitosis/form-item/index.ts"],
+      "@fundamental/mitosis/icon": ["libs/mitosis/icon/src/index.ts"],
+      "@fundamental/mitosis/list": ["libs/mitosis/list/index.ts"],
+      "@fundamental/mitosis/segmented-button": [
+        "libs/mitosis/segmented-button/src/index.ts"
+      ],
+      "@fundamental/mitosis/shared": ["libs/mitosis/shared/src/index.ts"],
+      "@fundamental/mitosis/textarea": ["libs/mitosis/textarea/index.ts"],
+      "@fundamental/react": ["libs/react/index.ts"],
+      "@fundamental/react/button": ["libs/react/button/index.ts"],
+      "@fundamental/react/card": ["libs/react/card/index.ts"],
+      "@fundamental/react/checkbox": ["libs/react/checkbox/index.ts"],
+      "@fundamental/react/form-item": ["libs/react/form-item/index.ts"],
+      "@fundamental/react/icon": ["libs/react/icon/index.ts"],
+      "@fundamental/react/input": ["libs/react/input/index.ts"],
+      "@fundamental/react/list": ["libs/react/list/index.ts"],
+      "@fundamental/react/segmented-button": [
+        "libs/react/segmented-button/index.ts"
+      ],
+      "@fundamental/react/shared": ["libs/react/shared/index.ts"],
+      "@fundamental/react/textarea": ["libs/react/textarea/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp", "dist"]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/mitosis/form-item",
+  "projectType": "library",
+  "targets": {
+    "compile": {
+      "executor": "@fundamental/mitosis-tools:compile",
+      "outputs": ["libs/angular/form-item", "libs/react/form-item"],
+      "options": {
+        "components": ["./form-item.component.tsx"],
+        "assets": ["./form-item.component.css"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/mitosis/form-item/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

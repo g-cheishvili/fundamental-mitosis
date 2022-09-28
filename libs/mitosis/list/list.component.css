@@ -1,0 +1,8 @@
+@import "fundamental-styles/dist/list.css";
+.fd-list {
+  min-width: fit-content;
+}
+
+.fd-list__item {
+  justify-content: space-between;
+}

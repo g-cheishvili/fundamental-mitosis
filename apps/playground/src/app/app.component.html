@@ -1,0 +1,43 @@
+<fd-card>
+  <ng-container title>
+    Todo application
+  </ng-container>
+  <fd-list content [noBorder]="true">
+    <form [formGroup]="itemForm" (ngSubmit)="addItem()">
+      <fd-list-item>
+        <fd-input-control [style.flex-grow]="1" control formControlName="title"
+                          placeholder="Enter new task name here"></fd-input-control>
+        <fd-button fdType="transparent">
+          <fd-icon name="add" color="positive"></fd-icon>
+        </fd-button>
+      </fd-list-item>
+    </form>
+    <ng-container *ngIf="filteredItems$ | async as items">
+      <ng-container *ngIf="items.length > 0; else nothingHere">
+        <app-list-item
+          *ngFor="let item of items; let index = index"
+          [item]="item"
+          (remove)="deleteItem(index)"
+          (update)="updateItem(index, $event)"
+        >
+        </app-list-item>
+      </ng-container>
+
+    </ng-container>
+  </fd-list>
+  <fd-card-footer>
+    <fd-segmented-button
+      style="margin: 0 auto;"
+      [ngModel]="selectedViewMode$ | async"
+      (ngModelChange)="selectedViewMode$.next($event)"
+      [buttons]="filterButtons"
+    >
+    </fd-segmented-button>
+  </fd-card-footer>
+</fd-card>
+
+<ng-template #nothingHere>
+  <fd-list-item>
+    <fd-list-item-title>Nothing is here yet</fd-list-item-title>
+  </fd-list-item>
+</ng-template>

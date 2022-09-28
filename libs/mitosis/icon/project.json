@@ -1,0 +1,20 @@
+{
+  "sourceRoot": "libs/mitosis/icon",
+  "projectType": "library",
+  "targets": {
+    "compile": {
+      "executor": "@fundamental/mitosis-tools:compile",
+      "outputs": [
+        "libs/angular/icon",
+        "libs/react/icon"
+      ],
+      "options": {
+        "components": ["./icon.component.tsx"],
+        "assets": [
+          "./icon.component.css"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

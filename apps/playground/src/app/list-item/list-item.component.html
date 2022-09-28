@@ -1,0 +1,32 @@
+<fd-list-item [formGroup]="form" (ngSubmit)="save()" [interractive]="true" (dblclick)="editMode = true">
+  <div [style.flex-grow]="1">
+    <ng-container *ngIf="!editMode; else editModeContent">
+      <fd-icon [name]="item.complete ? 'sys-enter-2' : 'sys-enter'" [style.margin-right.rem]="0.5" (click)="toggleComplete()"></fd-icon>
+      <fd-list-item-title>
+        <span [style.text-decoration]="item.complete ? 'line-through' : ''">{{ item.title }}</span>
+      </fd-list-item-title>
+    </ng-container>
+  </div>
+  <ng-template #editModeContent>
+    <fd-input-control
+      formControlName="title"
+      placeholder="Type Title here"
+      (keyup.enter)="save()"
+    ></fd-input-control>
+  </ng-template>
+  <div *ngIf="!editMode; else editModeActions">
+    <fd-button (click)="remove.emit()" fdType="transparent">
+      <fd-icon name="delete"></fd-icon>
+    </fd-button>
+  </div>
+  <ng-template #editModeActions>
+    <div>
+      <fd-button (click)="save()" fdType="transparent">
+        <fd-icon name="save"></fd-icon>
+      </fd-button>
+      <fd-button (click)="cancel()" fdType="transparent">
+        <fd-icon name="decline"></fd-icon>
+      </fd-button>
+    </div>
+  </ng-template>
+</fd-list-item>

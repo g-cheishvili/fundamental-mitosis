@@ -1,0 +1,29 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+<% moduleExports.forEach(function(moduleExport){ %>
+import { <%= moduleExport.names.className %> } from '<%= moduleExport.path %>';<% }); %>
+
+<% if(controlValueAccessor) { %>
+import { CvaModule } from '@fundamental/angular/cva';<% } %>
+
+<% uses.forEach(use => { %>
+import { <%= use.className %>Module } from '<%= use.path %>';<% }); %>
+
+@NgModule({
+  imports: [
+    CommonModule,
+<% if(controlValueAccessor) { %>CvaModule,<% } %>
+<% uses.forEach(use => { %>
+    <%= use.className %>Module,<% }); %>
+  ],
+  declarations: [
+  <% moduleExports.forEach(function(moduleExport){ %>
+  <%= moduleExport.names.className %>,<% }); %>
+  ],
+  exports: [
+  <% moduleExports.forEach(function(moduleExport){ %>
+  <%= moduleExport.names.className %>,<% }); %>
+<% if(controlValueAccessor) { %>CvaModule,<% } %>
+  ]
+})
+export class <%= className %>Module {}

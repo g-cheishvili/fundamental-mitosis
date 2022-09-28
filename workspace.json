@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "angular": "libs/angular",
+    "mitosis-button": "libs/mitosis/button",
+    "mitosis-card": "libs/mitosis/card",
+    "mitosis-checkbox": "libs/mitosis/checkbox",
+    "mitosis-form-item": "libs/mitosis/form-item",
+    "mitosis-icon": "libs/mitosis/icon",
+    "mitosis-input": "libs/mitosis/input",
+    "mitosis-list": "libs/mitosis/list",
+    "mitosis-segmented-button": "libs/mitosis/segmented-button",
+    "mitosis-shared": "libs/mitosis/shared",
+    "mitosis-textarea": "libs/mitosis/textarea",
+    "mitosis-tools": "libs/mitosis-tools",
+    "playground": "apps/playground",
+    "react": "libs/react"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/mitosis/shared/src",
+  "projectType": "library",
+  "targets": {
+    "compile": {
+      "executor": "@fundamental/mitosis-tools:compile-shared",
+      "outputs": [
+        "libs/angular/shared",
+        "libs/react/shared"
+      ]
+    }
+  },
+  "tags": []
+}

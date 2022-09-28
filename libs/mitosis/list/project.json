@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/mitosis/list",
+  "projectType": "library",
+  "targets": {
+    "compile": {
+      "executor": "@fundamental/mitosis-tools:compile",
+      "outputs": [
+        "libs/angular/list",
+        "libs/react/list"
+      ],
+      "options": {
+        "components": [
+          "./list.component.tsx",
+          "./list-item.component.tsx",
+          "./list-item-title.component.tsx",
+          "./list-action-item.component.tsx",
+          "./list-item-button.component.tsx"
+        ],
+        "assets": [
+          "./list.component.css"
+        ],
+        "angular": {
+          "useAttributeSelector": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/mitosis/list/**/*.ts"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

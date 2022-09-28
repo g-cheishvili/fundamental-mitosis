@@ -1,0 +1,105 @@
+{
+  "projectType": "application",
+  "sourceRoot": "apps/playground/src",
+  "prefix": "fundamental-mitosis",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/playground",
+        "index": "apps/playground/src/index.html",
+        "main": "apps/playground/src/main.ts",
+        "polyfills": "apps/playground/src/polyfills.ts",
+        "tsConfig": "apps/playground/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/playground/src/favicon.ico",
+          "apps/playground/src/assets",
+          {
+            "glob": "**/css_variables.css",
+            "input": "./node_modules/@sap-theming/theming-base-content/content/Base/baseLib/",
+            "output": "./assets/theming-base/"
+          },
+          {
+            "glob": "**/*",
+            "input": "./node_modules/fundamental-styles/dist/theming/",
+            "output": "./assets/fundamental-styles-theming/"
+          }
+        ],
+        "styles": [
+          "apps/playground/src/styles.scss",
+          "node_modules/fundamental-styles/dist/icon.css",
+          {
+            "input": "apps/playground/src/theming/sap_fiori_3_fonts.css",
+            "inject": false,
+            "bundleName": "sap_fiori_3_fonts"
+          },
+          {
+            "input": "apps/playground/src/theming/sap_horizon_fonts.css",
+            "inject": false,
+            "bundleName": "sap_horizon_fonts"
+          }
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/playground/src/environments/environment.ts",
+              "with": "apps/playground/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:webpack-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "playground:build:production"
+        },
+        "development": {
+          "browserTarget": "playground:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4200,
+        "publicHost": "http://localhost:4200"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "playground:build"
+      }
+    }
+  },
+  "tags": []
+}

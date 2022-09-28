@@ -1,0 +1,25 @@
+{
+  "sourceRoot": "libs/mitosis/card",
+  "projectType": "library",
+  "targets": {
+    "compile": {
+      "executor": "@fundamental/mitosis-tools:compile",
+      "outputs": [
+        "libs/angular/card",
+        "libs/react/card"
+      ],
+      "options": {
+        "components": [
+          "./card.component.tsx",
+          "./card-footer.component.tsx",
+          "./card-footer-actions.component.tsx",
+          "./card-footer-action-item.component.tsx"
+        ],
+        "assets": [
+          "./card.component.css"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

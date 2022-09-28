@@ -1,0 +1,23 @@
+{
+  "sourceRoot": "libs/mitosis/segmented-button",
+  "projectType": "library",
+  "targets": {
+    "compile": {
+      "executor": "@fundamental/mitosis-tools:compile",
+      "outputs": [
+        "libs/angular/segmented-button",
+        "libs/react/segmented-button"
+      ],
+      "options": {
+        "components": [
+          "./segmented-button.component.tsx",
+          "./segment.component.tsx"
+        ],
+        "assets": [
+          "./segmented-button.component.css"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
